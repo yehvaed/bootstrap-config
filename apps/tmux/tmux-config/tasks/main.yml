@@ -1,0 +1,13 @@
+---
+- name: Create link to config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tmux.conf"
+    dest: "~/.tmux.conf"
+    state: "link"
+
+- name: Install zsh helpers
+  ansible.builtin.blockinfile:
+    marker: "# {mark} ANSIBLE MANAGED BLOCK [id={{ role_name }}]"
+    path: "~/.zshrc.local"
+    block: "{{ lookup('ansible.builtin.template', role_path + '/templates/tmux.zsh.j2') }}"
+    create: true

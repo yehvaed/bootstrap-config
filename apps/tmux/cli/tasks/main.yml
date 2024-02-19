@@ -1,0 +1,8 @@
+---
+- name: Install tmux package
+  community.general.homebrew:
+    name: tmux
+    state: present
+  when: ansible_distribution == 'MacOSX'
+
+

@@ -1,0 +1,4 @@
+---
+- name: Install nvim plugins based on my config
+  ansible.builtin.shell:
+    cmd: nvim --headless "+lua require('lazy').install({wait=true})" "+qa"

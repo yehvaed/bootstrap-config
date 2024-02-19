@@ -1,0 +1,15 @@
+---
+- name: Create link to my nvim config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files"
+    dest: "{{ xdg_config_dir }}/{{ nvim_config_name }}"
+    state: "link"
+  notify:
+    - Install nvim plugins based on my config
+
+- name: Install zsh helpers
+  ansible.builtin.blockinfile:
+    marker: "# {mark} ANSIBLE MANAGED BLOCK [id={{ role_name }}]"
+    path: "~/.zshrc.local"
+    block: "{{ lookup('ansible.builtin.template', role_path + '/templates/nvim.zsh.j2') }}"
+    create: true

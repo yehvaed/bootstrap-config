@@ -1,0 +1,7 @@
+---
+- name: Install neovim package
+  community.general.homebrew:
+    name: neovim
+    state: present
+  when: ansible_distribution == 'MacOSX'
+

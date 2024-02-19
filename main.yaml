@@ -1,0 +1,12 @@
+---
+- name: "bootstrap machine"
+  hosts: localhost
+
+  vars:
+    xdg_config_dir: "~/.config"
+  
+  roles:
+    - role: "nvim/nvim-config"
+    - role: "tmux/tmux-config"
+    - role: "git/git-config"
+
