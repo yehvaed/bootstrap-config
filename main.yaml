@@ -1,5 +1,5 @@
 ---
-- name: "bootstrap machine"
+- name: "Bootstrap machine"
   hosts: localhost
 
   vars:
@@ -9,4 +9,5 @@
     - role: "nvim/nvim-config"
     - role: "tmux/tmux-config"
     - role: "git/git-config"
+    - role: "wezterm/wezterm-config"
 

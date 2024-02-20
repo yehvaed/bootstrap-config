@@ -3,6 +3,12 @@ return {
 		require("telescope").setup({
 			defaults = {
 				layout_strategy = "vertical",
+				layout_config = {
+					mirror = false,
+					vertical = {
+						prompt_position = "bottom",
+					},
+				},
 			},
 			pickers = {
 				colorscheme = {

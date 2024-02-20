@@ -1,2 +1,3 @@
 dependencies:
   - role: tmux/cli
+  - role: fzf/fzf-tmux
