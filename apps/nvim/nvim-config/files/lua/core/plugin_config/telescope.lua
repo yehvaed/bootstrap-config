@@ -1,6 +1,9 @@
 return {
 	config = function()
 		require("telescope").setup({
+			defaults = {
+				layout_strategy = "vertical",
+			},
 			pickers = {
 				colorscheme = {
 					enable_preview = true,
